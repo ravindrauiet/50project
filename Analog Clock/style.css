@@ -99,3 +99,11 @@ img{
     transform: rotate(250deg);
     background-color: goldenrod;
 }
+
+#author{
+    position: absolute;
+    bottom : 0;
+    color: white;
+    font-size: 30px;
+    background: rgba(5, 215, 155, 0.4); 
+}
