@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+}
+
+#author{
+    position: absolute;
+    bottom : 0;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background: rgba(5, 215, 155, 0.4); 
+}
