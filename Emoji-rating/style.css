@@ -33,6 +33,7 @@ body{
 .fas{
     margin: 1px;
     transform: translateX(0);
+    transition: transform 0.2s;
 }
 
 .rating-container{
