@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    display:  flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serifY;
+}
+
+h1{
+    font-size: 100px;
+    color: aliceblue;
+    backdrop-filter: brightness(0.5);
+    letter-spacing: 4px;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    padding:  20px 40px;
+    font-size: 25px;
+    border : 4px solid;
+    cursor: pointer;
+    transition: 1s background-color;
+    white-space: nowrap;
+}
+
+.btn:hover{
+    background-color: white;
+    color:  black;
+}
+
+.split{
+    width: 50%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+}
+
+.split.left{
+    position: absolute;
+    left: 0;
+    background-color: rgb(225, 32, 32);
+    background-image: url("https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-storage-select-202209-6-7inch-deeppurple?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1663790290238");
+    background-size: cover;
+}
+
+
+.split.right{
+    position: absolute;
+    right: 0;
+    background-color: plum;
+    background-image: url("https://images.samsung.com/is/image/samsung/p6pim/in/2302/gallery/in-galaxy-s23-s918-sm-s918bzgcins-thumb-534863398?imwidth=480");
+    background-size: cover;
+}
+
+.active-left .left{
+    width: 75%;
+}
+
+.active-left .right{
+    width:  25%;
+}
+
+.active-right .right{
+    width:  75%;
+}
+
+.active-right .left{
+    width: 25%;
+}
+
+
+.left , .right{
+    transition: width 2s ease-in-out;
+}
+
+#author{
+    position: absolute;
+    bottom : 0;
+    color: white;
+    font-size: 30px;
+    background: rgba(5, 215, 155, 0.4); 
+}
