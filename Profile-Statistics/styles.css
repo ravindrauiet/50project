@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background-color: yellow;
+    font-family: cursive;
+}
+
+.stats-container{
+    margin: 20px;
+    border:dotted green;
+    min-width: 200px;
+    height: 100px;
+    position: relative;
+    padding: 20px;
+}
+
+.stats-container h4{
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.icons{
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.counter{
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green;
+}
+
+@media  screen and (max-width:600px){
+    body {
+        flex-direction: column;
+    }    
+}
+
+#author{
+    position: absolute;
+    bottom : 0;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    background: rgba(5, 215, 155, 0.4); 
+}
