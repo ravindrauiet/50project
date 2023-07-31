@@ -1,28 +1,65 @@
-const formE1 = document.querySelector(".form");
-const inputE1 = document.querySelector(".input");
-const ulE1 = document.querySelector(".list");
+const form = document.getElementById('form')
+const input = document.getElementById('input')
+const todosUL = document.getElementById('todos')
 
+const todos = JSON.parse(localStorage.getItem('todos'))
 
-formE1.addEventListener("submit", ()=>{
-    event.preventDefault();
-    toDoList();
+if(todos) {
+    todos.forEach(todo => addTodo(todo))
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    addTodo()
 })
 
-function toDoList(){
-    let newTask = inputE1.value;
-    if(newTask === ""){
-        alert("Please enter a task")
+function addTodo(todo) {
+    let todoText = input.value
+
+    if(todo) {
+        todoText = todo.text
     }
-    else{
-        const liE1=document.createElement('li');
-        liE1.innerText = newTask;
-        ulE1.appendChild(liE1);
-        inputE1.value =""
-        const checkBtnE1 = document.createElement("div");
-        checkBtnE1.innerHTML=`<i class="fa-solid fa-square-check"></i>`;
-        liE1.appendChild(checkBtnE1);
-        const trashBtnE1 = document.createElement("div");
-        trashBtnE1.innerHTML=`<i class="fa-solid fa-trash-can-arrow-up"></i>`;
-        liE1.appendChild(trashBtnE1);
+
+    if(todoText) {
+        const todoEl = document.createElement('li')
+        if(todo && todo.completed) {
+            todoEl.classList.add('completed')
+        }
+
+        todoEl.innerText = todoText
+
+        todoEl.addEventListener('click', () => {
+            todoEl.classList.toggle('completed')
+            updateLS()
+        }) 
+
+        todoEl.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+
+            todoEl.remove()
+            updateLS()
+        }) 
+
+        todosUL.appendChild(todoEl)
+
+        input.value = ''
+
+        updateLS()
     }
+}
+
+function updateLS() {
+    todosEl = document.querySelectorAll('li')
+
+    const todos = []
+
+    todosEl.forEach(todoEl => {
+        todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        })
+    })
+
+    localStorage.setItem('todos', JSON.stringify(todos))
 }
