@@ -98,3 +98,12 @@ body {
   background-color: var(--line-border-empty);
   cursor: not-allowed;
 }
+
+#author{
+    position: absolute;
+    bottom : 0;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    background: rgba(5, 215, 155, 0.4); 
+}
